@@ -38,25 +38,25 @@ variable "service_principal_secret" {
 
 output "vnet_id" {
     description = "For storing the id of previously created vnet"
-    value = azure_resource_group.aks_vnet.name
+    value = azurerm_virtual_network.aks_vnet.id
 }
 
 output "control_plane_subnet_id" {
     description = "For storing the id of the control plane subnet within the vnet"
-    value = azure_resource_group.aks_vnet.control_plane_subnet.name
+    value = azurerm_subnet.control_plane_subnet.id
 }
 
 output "worker_node_subnet_id" {
     description = "For storing the id of the worker node subnet within the vnet"
-    value = azure_resource_group.aks_vnet.worker_node_subnet.name
+    value = azurerm_subnet.worker_node_subnet.id
 }
 
 output "networking_resource_group_name" {
     description = "Azure resource where network resources are provioned in"
-    value = var.azure_resource_group.name
+    value = azurerm_resource_group.networking.name
 }
 
 output "aks_nsg_id" {
     description = "For storing the ID of network security group (NSG)"
-    value = azure_resource_group.aks_nsg.name
+    value = azurerm_network_security_group.aks_nsg.id
 }
