@@ -15,5 +15,5 @@ steps:
     containerRegistry: 'Docker hub'
     repository: 'whule/flask-app'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '**/dockerfile'
     tags: 'latest'
