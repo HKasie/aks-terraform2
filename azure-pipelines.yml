@@ -12,10 +12,10 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'Docker hub'
+    containerRegistry: 'whule-docker-hub'
     repository: 'whule/flask-app'
     command: 'buildAndPush'
-    Dockerfile: '**/dockerfile'
+    Dockerfile: '**/Dockerfile'
     tags: 'latest'
 
 - task: KubernetesManifest@1
